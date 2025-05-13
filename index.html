@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Squeeze - Premium Juice Shop</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Internal CSS */
+        :root {
+            --primary-color: #ff7b00;
+            --secondary-color: #4caf50;
+            --light-color: #f8f9fa;
+            --dark-color: #212529;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: white !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+        
+        .nav-link {
+            color: var(--dark-color) !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color) !important;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-primary:hover {
+            background-color: #e66e00;
+            border-color: #e66e00;
+        }
+        
+        .btn-outline-primary {
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600') center/cover no-repeat;
+            color: white;
+            padding: 100px 0;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .juice-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .juice-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .badge-special {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+        
+        .testimonial {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        
+        .rating {
+            color: #ffc107;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            color: var(--primary-color);
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.25rem rgba(255, 123, 0, 0.25);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="fas fa-blender"></i> Fresh Squeeze
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Our Juices</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item ms-2">
+                        <a class="btn btn-outline-primary" href="#order">Order Now</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero text-center" id="home">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-4">Fresh, Healthy, Delicious</h1>
+            <h2 class="h3 mb-5">Premium cold-pressed juices made with 100% organic ingredients</h2>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#menu" class="btn btn-primary btn-lg">Explore Our Menu</a>
+                <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>100% Organic</h3>
+                    <p class="text-muted">We use only certified organic fruits and vegetables for maximum nutrition.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-blender"></i>
+                    </div>
+                    <h3>Cold-Pressed</h3>
+                    <p class="text-muted">Our cold-press method preserves all nutrients and natural flavors.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3>Fresh Delivery</h3>
+                    <p class="text-muted">Get our juices delivered fresh to your doorstep within hours.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="py-5 bg-light" id="menu">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">Our Juices</h2>
+                <p class="text-muted">Discover our range of freshly pressed juices</p>
+            </div>
+            
+            <div class="row g-4" id="order">
+                <!-- Juice Card 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://showmetheyummy.com/wp-content/uploads/2016/03/Green-Juice-Show-Me-the-Yummy-6.jpg" class="card-img-top" alt="Green Detox Juice">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="card-title mb-0">Green Detox</h4>
+                                <span class="badge bg-success badge-special">Bestseller</span>
+                            </div>
+                            <p class="card-text">Kale, cucumber, celery, apple, and ginger blend for the perfect detox.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$8.99</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Juice Card 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://nurturedhomes.com/wp-content/uploads/2022/08/blueberry-juice-5.jpg" class="card-img-top" alt="Berry Blast Juice">
+                        <div class="card-body">
+                            <h4 class="card-title mb-2">Berry Blast</h4>
+                            <p class="card-text">Strawberries, blueberries, raspberries, and apple for antioxidant power.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$9.49</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Juice Card 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://tonicarch.com/wp-content/uploads/2023/07/Tropical-Paradise-Juice.jpg" class="card-img-top" alt="Tropical Paradise Juice">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h4 class="card-title mb-0">Tropical Paradise</h4>
+                                <span class="badge bg-success badge-special">New</span>
+                            </div>
+                            <p class="card-text">Pineapple, mango, passion fruit, and orange for a tropical escape.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$8.99</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Juice Card 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/03/carrot-juice-recipe.jpg.webp" class="card-img-top" alt="Carrot Ginger Juice">
+                        <div class="card-body">
+                            <h4 class="card-title mb-2">Carrot Ginger</h4>
+                            <p class="card-text">Fresh carrots, apple, and ginger for immune support and digestion.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$7.99</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Juice Card 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://domesticfits.com/wp-content/uploads/2023/02/Beetroot-juice-feature.jpg" class="card-img-top" alt="Beet Root Juice">
+                        <div class="card-body">
+                            <h4 class="card-title mb-2">Beet Boost</h4>
+                            <p class="card-text">Beetroot, carrot, apple, and lemon for natural energy and endurance.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$8.49</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Juice Card 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card juice-card h-100">
+                        <img src="https://www.bing.com/th/id/OIP.eJtUJIyNWOD5VXcABQEOrgHaHa?w=181&h=211&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" class="card-img-top" alt="Citrus Splash Juice">
+                        <div class="card-body">
+                            <h4 class="card-title mb-2">Citrus Splash</h4>
+                            <p class="card-text">Orange, grapefruit, lemon, and lime for a vitamin C packed refreshment.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="price">$7.99</span>
+                                <button class="btn btn-outline-primary">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <img src="https://img.freepik.com/premium-photo/colorful-juice-mix-juice-background_1036998-120306.jpg?w=2000" alt="About our juice shop" class="img-fluid rounded">
+                </div>
+                <div class="col-lg-6">
+                    <h2 class="display-5 fw-bold mb-4">Our Story</h2>
+                    <p class="lead">Fresh Squeeze was born from a passion for health and wellness.</p>
+                    <p>We started as a small farmer's market stand in 2018 and quickly grew into a beloved local juice shop. Our commitment to quality ingredients, sustainable practices, and delicious flavors has made us a community favorite.</p>
+                    <p>Every juice we make follows our core philosophy: organic, nutritious, and absolutely delicious. We never add sugar, preservatives, or artificial ingredients – just pure fruit and vegetable goodness.</p>
+                    <a href="#contact" class="btn btn-primary mt-3">Get In Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light" id="testimonials">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="display-5 fw-bold">What Our Customers Say</h2>
+                <p class="text-muted">Don't just take our word for it</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Testimonial 1 -->
+                <div class="col-md-4">
+                    <div class="testimonial h-100">
+                        <div class="rating mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"The Green Detox juice has become my morning ritual! I feel so energized and the taste is amazing. Fresh Squeeze has the best quality juices in town."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <small class="text-muted">Loyal Customer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="col-md-4">
+                    <div class="testimonial h-100">
+                        <div class="rating mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-3">"I love the subscription service! Having fresh juices delivered to my office twice a week has made staying healthy so much easier. The Beet Boost is my absolute favorite."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Michael Rodriguez</h5>
+                                <small class="text-muted">Subscription Member</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="col-md-4">
+                    <div class="testimonial h-100">
+                        <div class="rating mb-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-3">"As a fitness instructor, I recommend Fresh Squeeze to all my clients. The juices are perfect for post-workout recovery and the staff is always so friendly and knowledgeable."</p>
+                        <div class="d-flex align-items-center">
+                            <img src="/api/placeholder/50/50" class="rounded-circle me-3" alt="Customer">
+                            <div>
+                                <h5 class="mb-0">Emma Thompson</h5>
+                                <small class="text-muted">Fitness Trainer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-5" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Get In Touch</h2>
+                    <p class="mb-4">Have questions or feedback? We'd love to hear from you!</p>
+                    
+                    <form>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-12">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject">
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-lg-6">
+                    <div class="bg-light p-4 h-100 rounded">
+                        <h3 class="mb-4">Visit Our Shop</h3>
+                        <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> 123 Juice Lane, Freshville, CA 90210</p>
+                        <p><i class="fas fa-phone me-2 text-primary"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope me-2 text-primary"></i> hello@freshsqueeze.com</p>
+                        
+                        <h4 class="mt-4 mb-3">Hours</h4>
+                        <p><strong>Monday - Friday:</strong> 7:00 AM - 7:00 PM</p>
+                        <p><strong>Saturday:</strong> 8:00 AM - 6:00 PM</p>
+                        <p><strong>Sunday:</strong> 9:00 AM - 5:00 PM</p>
+                        
+                        <h4 class="mt-4 mb-3">Follow Us</h4>
+                        <div class="d-flex">
+                            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-5 bg-primary text-white">
+        <div class="container text-center">
+            <h3 class="mb-4">Join Our Newsletter</h3>
+            <p class="mb-4">Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your email address" aria-label="Your email address">
+                        <button class="btn btn-dark" type="button">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="mb-3">Fresh Squeeze</h5>
+                    <p>Bringing the freshest, most nutritious cold-pressed juices to health-conscious consumers since 2018.</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#menu" class="text-white">Our Juices</a></li>
+                        <li><a href="#about" class="text-white">About Us</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3">Policies</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">Privacy Policy</a></li>
+                        <li><a href="#" class="text-white">Terms of Service</a></li>
+                        <li><a href="#" class="text-white">Shipping Policy</a></li>
+                        <li><a href="#" class="text-white">FAQs</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3">Download Our App</h5>
+                    <div class="d-flex flex-column">
+                        <a href="#" class="mb-2"><img src="/api/placeholder/120/40" alt="App Store" class="img-fluid"></a>
+                        <a href="#"><img src="/api/placeholder/120/40" alt="Google Play" class="img-fluid"></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 Fresh Squeeze. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
